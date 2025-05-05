@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# i
+#
+# Copyright 2023 (C) Benjamin Paul Suntrup. All rights reserved.
+#
+# i is an install script that logs a reason for installing a package. I want to keep track
+# of what I've put on my computer and why so I can reproduce the system if I ever migrate.
+# Also so that I can slim it down if I ever want to uninstall packages I don't use anymore.
+#
+# All arguments go to xbps-install. This simply asks for a reason and then logs it.
+# This depends on the script `il` being installed
+
+
+
+if [[ -z $@ ]]; then
+    echo "Usage: i [arguments to xbps-install -y]"
+    exit
+fi
+
+pkg_exists=$(xbps-query -S $@)
+if [[ -n "$pkg_exists" ]]; then
+    echo "That package exists, already :)"
+    exit
+fi
+
+echo "Why do you want to run \`xbps-install -y $@\`?"
+read why
+
+cmd="xbps-install -y $@"
+if sudo $cmd; then
+    echo $(date) $cmd: $why >> ${INSTALL_LOG:-$HOME/install-log.txt}
+else
+    echo "install failed. log not written."
+fi

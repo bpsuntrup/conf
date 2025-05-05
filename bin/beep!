@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# TODO: make this read music from a file and adjust the number of
+# Z's and the number of -c's read from head to produce different notes
+# of different lengths. Then use this command to produce small jingles
+# when running other commands.
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null

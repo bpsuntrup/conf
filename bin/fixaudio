@@ -1,0 +1,6 @@
+#!/bin/sh
+# See https://help.ubuntu.com/community/SoundTroubleshootingProcedure
+# for where I got this from. Sometimes the audio just goes kaput.
+killall pulseaudio; rm -r ~/.config/pulse/* ; rm -r ~/.pulse*
+sleep 10
+pulseaudio -k

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+awk '/4/ {print}' /home/benjamin/minecraft.txt | clipin && /home/benjamin/.minecraft/launcher/minecraft-launcher

@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+# Copyright 2023 Benjamin Paul Suntrup
+# enable the darned touchpad tap to click
+
+# Bash way of getting touchpad id:
+#id=`xinput --list | sed '/TouchPad/s/.*id=\([0-9]*\).*/\1/;t;d'`
+
+# But we use perl anyway...
+
+use strict;
+use warnings;
+
+my ($xinputid) = grep {$_ =~ /TouchPad/} `xinput --list`;
+($xinputid) = $xinputid =~ m/id=(\d+)/g;
+
+my (@props) = grep {/(Tapping Enabled|Tapping Drag Enabled) \(/}
+                  `xinput --list-props $xinputid`;
+
+for my $prop (@props) {
+    $prop =~ m/(?<propnum>\d+)/;
+    my $propnum = $+{propnum};
+    `xinput set-prop $xinputid $propnum 1`
+}
+

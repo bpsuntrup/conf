@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# diary
+# Copyright 2023 (C) Benjamin Paul Suntrup
+#
+# Reads $DIARY environment variable for name of diary directory
+# Opens file at $DIARY/year-month-day.jrnl with $EDITOR, defaulting
+# to vim. Start writing :)
+
+diary=${DIARY:-$HOME/diary}
+if [[ ! -d $diary ]]; then
+    echo "$diary does not exist"
+    exit
+fi
+
+date=$(date +%Y-%m-%d)
+file=$diary/${date}.jrnl
+time=$(date +%c)
+
+echo $time  >> $file
+exec ${EDITOR:-vim} $file

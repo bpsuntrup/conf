@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# il - install log
+#
+# Copyright 2023 (C) Benjamin Paul Suntrup. All rights reserved.
+#
+# basically a quick wrapper to add ad-hoc lines to ~/install-log.txt
+
+echo "Uh oh, what did you do?"
+read what
+
+[[ "$what" == "nothing" ]] && echo "OK, bye!" && exit
+
+echo $(date) "$what" >> ${INSTALL_LOG:-$HOME/install-log.txt}
+echo "K, thanks. Updated  ${INSTALL_LOG:-$HOME/install-log.txt}"

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# statusbar
+#
+# Copyright 2023 Benjamin Suntrup. All rights reserved
+#
+# sets name of root window, which is the status bar for dwm: a single line of
+# text
+
+while : ; do
+    #This is for laptop only:
+    #
+    #battery_charge=$(cat /sys/class/power_supply/BAT0/capacity)
+    #battery_status=$(cat /sys/class/power_supply/BAT0/status)
+    #
+    # TODO: I want this to display bars like nmcli does
+    #wifi=$(awk '/wlp0s20f0u1/ { split($3,a,"."); print a[1]  }' \
+           #/proc/net/wireless)
+    # The following line works on my laptop:
+    #cputemp=$(cat /sys/class/thermal/thermal_zone5/temp | sed 's/...$//g')
+    # This works on my desktop (and probably on my laptop too:
+    cputemp=$(sensors | grep 'Package id 0' | cut -d' ' -f 5)
+    # laptop:
+    # xsetroot -name "temp: $cputemp | wifi: $wifi | $battery_status: $battery_charge% | $(date)"
+    # desktop:
+    xsetroot -name "temp: $cputemp | $(date)"
+    sleep 1
+done
+
+#🔌 electric plug
+#🔋 battery

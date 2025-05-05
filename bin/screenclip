@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# screenclip
+#
+# Copyright 2023 Benjamin Paul Suntrup. All rights reserved
+# 
+# take a small clip of the screen and put it in the keyboard
+
+maim -s | xclip -selection clipboard -t image/png -i

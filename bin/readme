@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# readme
+# Copyright 2024 Benjamin Paul Suntrup
+#
+# display my README file
+st -g=88x50+500+100 -T hi -n there -e sh -c 'less -N ~/README.txt'

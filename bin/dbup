@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# dbup
+# 
+# Copyright 2023 (C) Benjamin Paul Suntrup. All rights reserved.
+#
+# helper script to start db, since I don't necessarily want it running
+# all the time
+
+logfile=${XDG_DATA_HOME:-$HOME/.local/share}/pgsql/logfile
+
+pg_ctl -D /home/benjamin/pgdata -l $logfile start

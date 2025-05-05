@@ -1,0 +1,23 @@
+map t toggle
+map T tag-toggle
+map x delete
+map I set hidden!
+cmd open $opener "$f"
+# hit 'o' with a directory highlighted and close lf and cd into that file
+map o ${{
+    echo $f > $LF_CHDIR
+    lf -remote 'send quit'
+}}
+map a ${{
+    f=$f perl -ne '
+        chomp;
+        ($file) = $ENV{f} =~ /^(.*\/)[^\/]+$/;
+        if (/\/$/) {
+            mkdir "$file/$_";
+        }
+        else {
+            open my $fh, ">$file/$_";
+        }
+        exit;
+    ';
+}}

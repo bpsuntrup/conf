@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# apps
+#
+# Copyright 2023 benjamin paul Suntrup. All rights reserved
+#
+# launches a dmenu list of apps by type rather than by executable name
+# apps are in .config/apps.conf. This is basically a "favorites bar"
+
+lines=$(wc -l $HOME/.config/apps.conf | cut -d' ' -f1)
+echo $lines
+exec $(cat $HOME/.config/apps.conf | dmenu -i -l $lines | cut -d- -f2)
+
+

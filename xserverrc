@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "BENJAMIN I am here, please change this in .xserverrc"
+if [ -z "$XDG_VTNR" ]; then
+  exec /usr/bin/X -nolisten tcp "$@" +iglx
+else
+  exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR +iglx
+fi

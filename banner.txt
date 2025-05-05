@@ -1,0 +1,3 @@
+Welcome to my computer. This computer is called 'batbob'. 
+
+Press 'q' to continue and load the graphical environment.

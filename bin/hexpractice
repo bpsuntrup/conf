@@ -1,0 +1,124 @@
+#!/usr/bin/python
+
+''' hexpractice
+
+Copyright 2024 Benjamin Paul Suntrup
+fun little game I wrote to practice hex/binary/decimal conversions
+
+TODO: add stats? curses?
+TODO: add switches for what types of problems you want
+TODO: add database for keeping high scores
+TODO: add easy problems, multiples of 10 dec, and 10 hex, binary numbers with a single 1. Maybe an --easy mode?
+TODO: add fun problems: ip addresses
+TODO: make curses? add graphics and fireworks? idk, dumb idea
+'''
+
+from random import randint, sample, choice
+from functools import partial
+from time import time_ns
+from argparse import ArgumentParser
+import sys
+
+parser = ArgumentParser(
+           prog='hexpractice',
+           description='Fun game I wrote to practice hex/binary math. Restrict problems using the following switches.')
+
+parser.add_argument('--h2d', action='store_true')
+parser.add_argument('--d2h', action='store_true')
+parser.add_argument('--b2h', action='store_true')
+parser.add_argument('--b2d', action='store_true')
+parser.add_argument('--d2b', action='store_true')
+parser.add_argument('--h2b', action='store_true')
+parser.add_argument('--easy', action='store_true',
+                    help="Easy mode. Works for h2d only")
+args = parser.parse_args()
+
+print('''Practice your skills''')
+
+def rand_problem():
+    [arg1, arg2] = sample([2,10,16], 2)
+    return x2y(arg1,arg2)
+    
+
+def writebin(n):
+    temp =  "{:08b}".format(n)
+    return temp[:4] + " " + temp[4:]
+
+def writehex(n):
+    return "{:2h}".format(n)
+
+b2n = {
+    16: ['hex', hex],
+    10: ['dec', int],
+    2:  ['bin', writebin],
+}
+
+def x2y(x,y):
+    n = randint(0,255)
+    ans = input("Convert {} {} to {} -> ".format(b2n[x][1](n), b2n[x][0], b2n[y][0]))
+    if int(ans, base=y) == n:
+        print("Good")
+        return [0, 1]
+    else:
+        print("Bad. Answer is {}".format(b2n[y][1](n)))
+        return [1, 0]
+
+def easyh2d():
+    n = randint(0,15)
+    ans = input("Convert {} to dec -> ".format(hex(n*16) ))
+    if int(ans) == n*16:
+        print("Good")
+        return [0, 1]
+    else:
+        print("Bad. Answer is {}".format(n*16))
+        return [1, 0]
+
+def easyh2d2():
+    n = randint(0,25)
+    ans = input("Convert {} to dec -> ".format(hex(n*10) ))
+    if int(ans) == n*10:
+        print("Good")
+        return [0, 1]
+    else:
+        print("Bad. Answer is {}".format(n*10))
+        return [1, 0]
+
+problem_types = []
+if args.h2d:
+    if args.easy:
+        problem_types.append(easyh2d)
+        problem_types.append(easyh2d2)
+    else:
+        problem_types.append(partial(x2y,16,10))
+if args.d2h:
+    problem_types.append(partial(x2y,10,16))
+if args.d2b:
+    problem_types.append(partial(x2y,10,2))
+if args.h2b:
+    problem_types.append(partial(x2y,16,2))
+if args.b2h:
+    problem_types.append(partial(x2y,2,16))
+if args.b2d:
+    problem_types.append(partial(x2y,2,10))
+if len(problem_types) == 0:
+    problem_types.append(rand_problem)
+
+try:
+    mistakes = 0
+    corrects = 0
+    begin_time = time_ns()
+    while True:
+        try:
+            [bad, good] = choice(problem_types)()
+            #[bad, good] = easyh2d2()
+            mistakes += bad
+            corrects += good
+        except ValueError:
+            print("Whoops. Wrong base, bucko. Pay attention!")
+except KeyboardInterrupt:
+    end_time = time_ns()
+    t = (end_time - begin_time) / 1_000_000_000
+    print()
+    print("Score: {} correct answers, {} mistakes, {} seconds".format(corrects, mistakes, t))
+
+

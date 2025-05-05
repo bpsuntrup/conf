@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# volume
+#
+# Copyright 2023 Benjamin Suntrup. All rights reserved
+#
+# Uses pulseaudio utilities to set volume on all sinks. This could be
+# more sophisticated. Could take options for headphones or otherwise.
+# This is fine for now. I'm going to use it in my dwm config
+#
+# update 25 Nov 2023: I will not put this in my dwm config. I've 
+# figured out a solution using xbindkeys (see xbindkeysrc).
+# I'm keeping this anyway in case I decide to make it fancier in
+# the future, I can use this script, but it's not going into my
+# window manager.
+
+for SINK in $(pacmd list-sinks | awk '/index/ { print $3 }'); do
+    pactl set-sink-volume $SINK $1
+done

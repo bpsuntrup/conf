@@ -1,0 +1,7 @@
+" This is the only thing wrong with tridactyl:
+unbind <C-f>
+
+unbind J
+unbind K
+bind --mode=normal K tabprev
+bind --mode=normal J tabnext

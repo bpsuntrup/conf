@@ -1,0 +1,65 @@
+#!/usr/bin/env perl
+#
+# todo
+# 
+# Copyright (C) Benjamin Suntrup 2023. All rights reserved.
+#
+# called without arguments, searches .local/bin/* and ~/* 
+# for lines marked TODO
+# 
+# In the future, this could be more sophisticated, with switches for adding
+# files to be watched for TODOs, as well as adding "headless" todos.
+# TODO: document
+#
+
+my @search_files;
+
+if (my $switch = $ARGV[0]) {
+    if ($switch eq '--watch') {
+        shift;
+        watch(@ARGV);
+        exit;
+    }
+    elsif ($switch eq '--unwatch') {
+        shift;
+        unwatch(@ARGV);
+        exit;
+    }
+    else {
+        @search_files = @ARGV;
+    }
+}
+
+unless (@search_files) {
+    my $XDG_CONFIG_HOME = $ENV{XDG_CONFIG_HOME} || $ENV{HOME} . '/.config/';
+    $XDG_CONFIG_HOME =~ s,([^/])$,$1/,;
+    my @config = (
+        $XDG_CONFIG_HOME . 'todo.d/monitoring',
+        $XDG_CONFIG_HOME . 'todo.conf',
+        $XDG_CONFIG_HOME . 'todo',
+    );
+    my $fh;
+
+    for my $conf (@config) {
+        next unless -f $conf;
+        open ($fh, '<', $conf) || die $!;
+        while (my $line = <$fh>) {
+            $line =~ s/^\s|\s$//g;
+            push @search_files, $line;
+        }
+        last;
+    }
+    die "Nothing to search." unless @search_files;
+}
+
+local $, = " ";
+
+print `grep TODO @search_files`;
+
+sub watch {}
+sub unwatch {}
+
+
+
+
+

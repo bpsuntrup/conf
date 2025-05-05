@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# page-opens
+#
+# Copyright (C) Benjamin Paul Suntrup 2023. All rights reserved.
+#
+# takes a command as an argument, pipes all of its output into /dev/null, and
+# shows the open() system calls. Good for figuring out what files a program is
+# using.
+
+if [[ -z "$1" ]]; then
+    echo "Usage: page-opens <command> <args>"
+    exit
+fi
+
+TEMP=$(mktemp /tmp/page-opens.XXXXXX)
+strace -o $TEMP $@ 2>&1 >/dev/null
+grep open $TEMP | less
+rm $TEMP

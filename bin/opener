@@ -1,0 +1,40 @@
+#!/bin/env perl
+
+# Copyright 2023 Benjamin Suntrup. All rights reserved
+
+use warnings;
+
+my %map = (
+    txt  => 'vim',
+    jrnl => 'vim',
+    sh   => 'vim',
+    pl   => 'vim',
+    odt  => 'libreoffice',
+    pdf  => 'zathura',
+    png  => 'nsxiv',
+    jpg  => 'nsxiv',
+    jpeg  => 'nsxiv',
+);
+
+my $f = $ARGV[0];
+my ($ext) = ($f =~ /.*\.([^\.]+)$/);
+
+my $program = $map{(lc $ext) // ''};
+
+if ($program) {
+    exec "$program '$f'" if $program;
+}
+
+my ($mimetype) = `file --mime-type -Lb $f`;
+
+if ($mimetype =~ /^text/) {
+    exec "vim '$f'";
+}
+
+if ($mimetype =~ /^application/) {
+    exec "xxd '$f' | less"
+}
+
+
+
+die "Can't open $f, type $mimetype."

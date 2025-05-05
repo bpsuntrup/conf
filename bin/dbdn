@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# dbdn
+# 
+# Copyright 2023 (C) Benjamin Paul Suntrup. All rights reserved.
+#
+# helper script to stop db, since I don't necessarily want it running
+# all the time
+
+pg_ctl stop -D /home/benjamin/pgdata

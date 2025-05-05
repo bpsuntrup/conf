@@ -1,0 +1,21 @@
+# This was ripped off of https://wiki.archlinux.org/title/Xbindkeys
+# activated by xbindkeys, called in my .xinitrc
+
+# "volume +5%" XF86AudioRaiseVolume
+# "volume -5%" XF86AudioLowerVolume
+
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +5000"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -5000"
+   XF86AudioLowerVolume
+
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+# Mute microphone
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+   XF86AudioMicMute
