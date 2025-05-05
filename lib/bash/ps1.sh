@@ -54,4 +54,4 @@ function parse_git_dirty {
 #     \$: $ if user account, # if superuser
 #export PS1="\[\e[36m\]\w\[\e[m\]\[\e[33;40m\]\`parse_git_branch\`\[\e[m\]≫ "
 
-export PS1="\[\e[36m\]\h>\w\[\e[m\]\[\e[33;40m\]\`parse_git_branch\`\[\e[m\]\$ "
+export PS1="\[\e[32;40m\]\u\[\e[31;40m\]@\[\e[36m\]\h>\w\[\e[m\]\[\e[33;40m\]\`parse_git_branch\`\[\e[m\]\$ "

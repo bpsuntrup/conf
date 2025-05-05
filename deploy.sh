@@ -27,6 +27,7 @@ deploy_link tmux.conf .tmux.conf
 deploy_link xinitrc .xinitrc
 
 mkdir -p $HOME/.config
+chmod +x $HOME/conf/bin/*
 
 # TODO: make these ones XDG compliant
 deploy_link lf .config/lf
@@ -49,5 +50,7 @@ echo "Deploying dwm..."
 (cd $HOME/conf/src/dwm && make clean install > /dev/null)
 echo "Deploying nsxiv..."
 (cd $HOME/conf/src/nsxiv && make clean install > /dev/null)
+
+mkdir -p $XDG_STATE_HOME/vim/
 
 echo "Done."
