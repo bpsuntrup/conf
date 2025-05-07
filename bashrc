@@ -60,3 +60,4 @@ set -o vi
 
 # work stuff
 export KUBECONFIG=$HOME/rke-apps-dev.yml
+export LOCAL_ENV=dev
