@@ -48,10 +48,10 @@ export INSTALL_LOG=$HOME/install-log.txt # used by bin/i
 export DIARY=$HOME/dox/diary
 
 # PSQL
-export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
-export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
-export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
-export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+# export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+# export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
+# export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+# export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 
 # plenv
 eval "$(plenv init -)"
@@ -61,3 +61,6 @@ set -o vi
 # work stuff
 export KUBECONFIG=$HOME/rke-apps-dev.yml
 export LOCAL_ENV=dev
+
+# site stuff
+source $HOME/conf/site.sh

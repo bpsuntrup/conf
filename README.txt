@@ -28,3 +28,7 @@ conf/src
         * st
         * dwm
         * nsxiv
+
+conf/site.sh
+    * this config file allows site-specific settings to be set in conf/site.sh
+      that are not shared in the git repository
