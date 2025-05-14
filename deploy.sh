@@ -43,6 +43,7 @@ deploy_link todo.conf .config/todo.conf
 deploy_link emacs .config/emacs
 deploy_link nvim .config/nvim
 deploy_link helix .config/helix
+deploy_link sshrc.sh .ssh/rc
 
 echo "Deploying st..."
 (cd $HOME/conf/src/st && make clean install > /dev/null)
