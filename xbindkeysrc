@@ -1,5 +1,10 @@
-# This was ripped off of https://wiki.archlinux.org/title/Xbindkeys
-# activated by xbindkeys, called in my .xinitrc
+# See https://wiki.archlinux.org/title/Xbindkeys
+#
+# To add new bindings, use `xbindkeys --key` to get the keymapping
+#
+# I would like to start moving things that aren't dwm-related from 
+# dwm into here
+
 
 # "volume +5%" XF86AudioRaiseVolume
 # "volume -5%" XF86AudioLowerVolume
