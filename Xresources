@@ -1,8 +1,8 @@
-xterm*background: black
-xterm*foreground: white
+/*xterm*background: black
+xterm*foreground: white*/
 
 ! use truetype font and size
-xterm*faceName: Monospace
+/*xterm*faceName: Monospace
 xterm*faceSize: 12
 
 !! Transparency (0-1):
@@ -16,7 +16,7 @@ st.font: Monospace-10;
 ! st.borderpx: 2
 
 !! Set the background, foreground and cursor colors as below:
-
+*/
 !! gruvbox:
 /* *.color0: #1d2021
 *.color1: #cc241d
@@ -38,6 +38,7 @@ st.font: Monospace-10;
 */
 *.foreground: white
 *.cursorColor: white
+Xcursor.size: 16
 
 /* /1* !! gruvbox light: *1/ */
 /* *.color0: #fbf1c7 */
@@ -82,7 +83,7 @@ st.font: Monospace-10;
 /* *.colorBD:     #d6dbe5 */
 
 /* ! base16 */
-*.color0:       #181818
+/* *.color0:       #181818
 *.color1:       #ab4642
 *.color2:       #a1b56c
 *.color3:       #f7ca88
@@ -93,15 +94,15 @@ st.font: Monospace-10;
 *.color8:       #585858
 *.color9:       #ab4642
 *.color10:      #a1b56c
-*.color11:      #f7ca88
+*.color11:      #f7ca88 */
 /* blue, but actually orange */
 /* *.color12:      #7cafc2*/
-*.color12:      #ff7f50
-*.color13:      #ba8baf
+/**.color12:      #ff7f50
+*.color13:      #ba8baf */
 /* cyan i think */
 /* *.color14:      #86c1b9 */
-*.color14:  #00f0f0
-*.color15:      #f8f8f8
+/**.color14:  #00f0f0
+*.color15:      #f8f8f8*/
 
 /* !! solarized */
 /*

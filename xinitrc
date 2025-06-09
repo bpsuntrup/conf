@@ -21,25 +21,29 @@
 # TODO: learn when in the lifecycle of startx this is called. Looks like it's run after
 #       the x server starts.
 
-xwallpaper --zoom /home/benjamin/pix/bg/$(ls /home/benjamin/pix/bg | shuf | head -n 1)
+xwallpaper --zoom $HOME/pix/bg/$(ls $HOME/pix/bg | shuf | head -n 1)
 
 # TODO: remove when not using dwm
 statusbar &
 
-#xrdb -merge /home/benjamin/.Xresources
+xrdb -merge $HOME/.Xresources
+xset m 0 0
 xbindkeys # see .xbindkeysrc
 
 if [[ "${WM:-dwm}" == dwm ]]; then
     nohup statusbar 2>&1 &
 fi
 
-# Swap caps and Escape
-# setxkbmap -option caps:swapescape
-
 # Make caps lock ESC when tapped, and CTRL when held:
 setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
 
-firefox ~/README.txt &
+# work config
+if [[ "x$WORK" == "xyes" ]]; then
+    xrandr --output DP-1-1 --primary --output eDP-1 --right-of DP-1-1 --output DP-1-2 --above DP-1-1
+else
+    firefox ~/README.txt &
+fi
+
 
 exec ${WM:-dwm}

@@ -32,6 +32,7 @@ export PATH=$HOME/.plenv/bin:$HOME/.local/bin:/usr/lib/qt5/bin:/usr/local/pgsql/
 export EDITOR=vim
 export PAGER=less
 export OPENER=opener
+export BROWSER=firefox
 
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config

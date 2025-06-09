@@ -6,4 +6,5 @@
 # 
 # take a small clip of the screen and put it in the keyboard
 
-maim -s | xclip -selection clipboard -t image/png -i
+#maim -s | xclip -selection clipboard -t image/png -i
+ss

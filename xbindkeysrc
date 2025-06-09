@@ -19,3 +19,15 @@
 # Mute microphone
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
    XF86AudioMicMute
+
+"ss"
+    m:0x41 + c:50
+    Shift+Mod4 + Shift_L
+
+"ss"
+    m:0x41 + c:50
+    Shift+Mod4 + Shift_L
+
+"$BROWSER"
+    m:0x41 + c:25
+    Shift+Mod4 + w

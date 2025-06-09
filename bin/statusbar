@@ -19,11 +19,12 @@ while : ; do
     # The following line works on my laptop:
     #cputemp=$(cat /sys/class/thermal/thermal_zone5/temp | sed 's/...$//g')
     # This works on my desktop (and probably on my laptop too:
-    cputemp=$(sensors | grep 'Package id 0' | cut -d' ' -f 5)
+    #cputemp=$(sensors | grep 'Package id 0' | cut -d' ' -f 5)
     # laptop:
     # xsetroot -name "temp: $cputemp | wifi: $wifi | $battery_status: $battery_charge% | $(date)"
     # desktop:
-    xsetroot -name "temp: $cputemp | $(date)"
+    #xsetroot -name "temp: $cputemp | $(date)"
+    xsetroot -name "$(date)"
     sleep 1
 done
 
