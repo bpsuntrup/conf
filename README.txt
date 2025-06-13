@@ -32,3 +32,5 @@ conf/src
 conf/site.sh
     * this config file allows site-specific settings to be set in conf/site.sh
       that are not shared in the git repository
+
+git clone --recurse-submodules git@github.com:bpsuntrup/conf.git
