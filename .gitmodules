@@ -1,9 +1,12 @@
 [submodule "src/dwm"]
 	path = src/dwm
 	url = git@github.com:bpsuntrup/dwm.git
+    branch = master
 [submodule "src/st"]
 	path = src/st
 	url = git@github.com:bpsuntrup/st.git
+    branch = benjamin
 [submodule "vim-settings"]
 	path = vim-settings
 	url = git@github.com:bpsuntrup/vim-settings.git
+    branch = main
