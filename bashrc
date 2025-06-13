@@ -24,6 +24,7 @@ source $HOME/conf/lib/bash/status.sh       # exports status function
 alias ls='ls --color=auto'
 alias tm='tmux attach'
 alias wget='wget --hsts-file ${XDG_STATE_HOME}/wget/.wget-hsts'
+alias sa=ssh-add
 
 
 export HISTCONTROL=ignoreboth
@@ -62,6 +63,7 @@ set -o vi
 # work stuff
 export KUBECONFIG=$HOME/rke-apps-dev.yml
 export LOCAL_ENV=dev
+eval $(ssh-agent)
 
 # site stuff
 source $HOME/conf/site.sh
