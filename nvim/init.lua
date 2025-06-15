@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -159,12 +159,12 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 1
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.o.confirm = true
+vim.o.confirm = false
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -200,7 +200,8 @@ vim.keymap.set('n', 'gj', '<C-w><C-j>', { desc = 'Move focus to the lower window
 vim.keymap.set('n', 'gk', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- BENJAMIN
-vim.keymap.set('n', '<leader><space>', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle nvim-tree' })
+vim.keymap.set('n', 'g<space>', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle nvim-tree' })
+vim.keymap.set('n', ';', ':', { desc = 'map ; to : for comfort' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
