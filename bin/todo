@@ -54,7 +54,7 @@ unless (@search_files) {
 
 local $, = " ";
 
-print `grep TODO @search_files`;
+print `grep -r TODO @search_files`;
 
 sub watch {}
 sub unwatch {}

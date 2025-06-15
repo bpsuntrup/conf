@@ -1,0 +1,6 @@
+# run the command `todo` in bin/todo to see a list of todo items across this repo in addition
+# to the following
+
+* create a `./deploy --server` option for nongraphical deployment
+* list all of the required software this needs to work
+* create a check in ./deploy for required software, alert user to install it
