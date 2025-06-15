@@ -201,6 +201,7 @@ vim.keymap.set('n', 'gk', '<C-w><C-k>', { desc = 'Move focus to the upper window
 
 -- BENJAMIN
 vim.keymap.set('n', 'g<space>', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle nvim-tree' })
+vim.keymap.set('n', '<leader><space>', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle nvim-tree' })
 vim.keymap.set('n', ';', ':', { desc = 'map ; to : for comfort' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
@@ -319,6 +320,7 @@ require('lazy').setup({
   {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    enabled = false,
     opts = {
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.o.timeoutlen
