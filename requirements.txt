@@ -1,0 +1,9 @@
+This is an incomplete list of requirements the host will need to have a consistent experience.
+
+st needs the following:
+* whatever it needs to compile (TODO: list what these are)
+* Noto fonts
+* particularly, going to need https://github.com/ryanoasis/nerd-fonts, use ./install.sh Noto.
+
+bin/ needs a few things too:
+* TODO: list what programs you need for bin/*
