@@ -7,3 +7,6 @@ st needs the following:
 
 bin/ needs a few things too:
 * TODO: list what programs you need for bin/*
+
+nvim:
+* npm (for pyright language server)
