@@ -10,3 +10,9 @@ bin/ needs a few things too:
 
 nvim:
 * npm (for pyright language server)
+
+Also, install:
+banner
+webcamoid (webcam software)
+flameshot (screenshot software)
+plenv
