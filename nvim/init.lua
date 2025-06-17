@@ -231,6 +231,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- BENJAMIN
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'VimResume' }, {
+  command = 'checktime',
+  pattern = '*',
+})
+
 -- I do have a nerd font -- BENJAMIN
 vim.g.have_nerd_font = true
 
