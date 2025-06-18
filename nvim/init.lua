@@ -67,6 +67,7 @@ require('lazy').setup({
   --BENJAMIN: installing fugitive
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-fugitive',
+  'mbbill/undotree',
 
   --BENJAMIN: installing nvim-tree
   {

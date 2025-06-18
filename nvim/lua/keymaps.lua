@@ -16,28 +16,25 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', 'gh', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', 'gl', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', 'gj', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', 'gk', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- BENJAMIN
+-- nvim-tree
 vim.keymap.set('n', 'g<space>', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle nvim-tree' })
--- vim.keymap.set('n', '<leader><space>', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle nvim-tree' })
-vim.keymap.set('n', ';', ':', { desc = 'map ; to : for comfort' })
-vim.keymap.set('n', 'gr', 'gT', { desc = 'map gr to gT for comfort' })
+
+-- buffers
 vim.keymap.set('n', '<leader>b', ':ls<cr>:b ', { desc = 'list buffers' })
 vim.keymap.set('n', '<C-n>', ':bn<cr>', { desc = 'next buffer' })
 vim.keymap.set('n', '<C-p>', ':bp<cr>', { desc = 'previous buffer' })
 
+-- git
 vim.keymap.set('n', 'gb', '<cmd>Git blame<cr>', { desc = 'git blame toggle' })
+
+-- undotree
+vim.keymap.set('n', 'gu', '<cmd>UndotreeToggle<cr>', { desc = 'toggle undotree' })
+
+-- comfort
+vim.keymap.set('n', 'gr', 'gT', { desc = 'map gr to gT for comfort' })
+vim.keymap.set('n', ';', ':', { desc = 'map ; to : for comfort' })
