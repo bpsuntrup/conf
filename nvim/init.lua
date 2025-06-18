@@ -118,6 +118,11 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+-- tabstop etc
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
 -- Enable break indent
 vim.o.breakindent = true
 
@@ -211,11 +216,7 @@ vim.keymap.set('n', '<leader>b', ':ls<cr>:b ', { desc = 'list buffers' })
 vim.keymap.set('n', '<C-n>', ':bn<cr>', { desc = 'next buffer' })
 vim.keymap.set('n', '<C-p>', ':bp<cr>', { desc = 'previous buffer' })
 
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+vim.keymap.set('n', 'gb', '<cmd>Git blame<cr>', { desc = 'git blame toggle' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -267,6 +268,10 @@ rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+
+  --BENJAMIN: installing fugitive
+  'tpope/vim-fugitive',
+
   --BENJAMIN: installing nvim-tree
   {
     'nvim-tree/nvim-tree.lua',
@@ -276,11 +281,11 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('nvim-tree').setup({
+      require('nvim-tree').setup {
         filters = {
-            git_ignored = false
+          git_ignored = false,
         },
-      })
+      }
     end,
   },
 
