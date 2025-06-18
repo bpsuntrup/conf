@@ -1,11 +1,9 @@
 emacs/
 site.sh
-nvim/lazy
 
 nvim/tags
 nvim/test.sh
 nvim/.luarc.json
 nvim/nvim
-
 nvim/spell/
 nvim/lazy-lock.json
