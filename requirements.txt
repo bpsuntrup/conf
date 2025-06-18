@@ -10,6 +10,7 @@ bin/ needs a few things too:
 
 nvim:
 * npm (for pyright language server)
+* ripgrep
 
 Also, install:
 banner
