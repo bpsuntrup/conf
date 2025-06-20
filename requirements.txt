@@ -17,3 +17,12 @@ banner
 webcamoid (webcam software)
 flameshot (screenshot software)
 plenv
+xclip
+xcape
+xswap
+setxkbmap
+xrandr
+xrdb
+xset
+xbindkeys
+xwallpaper
