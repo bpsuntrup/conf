@@ -36,5 +36,6 @@ vim.keymap.set('n', 'gb', '<cmd>Git blame<cr>', { desc = 'git blame toggle' })
 vim.keymap.set('n', 'gu', '<cmd>UndotreeToggle<cr>', { desc = 'toggle undotree' })
 
 -- comfort
-vim.keymap.set('n', 'gr', 'gT', { desc = 'map gr to gT for comfort' })
 vim.keymap.set('n', ';', ':', { desc = 'map ; to : for comfort' })
+vim.keymap.set('n', 'J', 'gT', { desc = 'previous tab' })
+vim.keymap.set('n', 'K', 'gt', { desc = 'next tab' })
