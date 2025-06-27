@@ -1,7 +1,0 @@
-theme = "mytheme.toml"
-[editor.whitespace.characters]
-space = "·"
-nbsp = "⍽"
-nnbsp = "␣"
-tab = "→"
-newline = "⏎"
