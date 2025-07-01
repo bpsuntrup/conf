@@ -69,6 +69,11 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'mbbill/undotree',
 
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+  },
+
   --BENJAMIN: installing nvim-tree
   {
     'nvim-tree/nvim-tree.lua',

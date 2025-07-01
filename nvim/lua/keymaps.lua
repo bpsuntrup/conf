@@ -30,12 +30,12 @@ vim.keymap.set('n', '<C-n>', ':bn<cr>', { desc = 'next buffer' })
 vim.keymap.set('n', '<C-p>', ':bp<cr>', { desc = 'previous buffer' })
 
 -- git
-vim.keymap.set('n', 'gb', '<cmd>Git blame<cr>', { desc = 'git blame toggle' })
+vim.keymap.set('n', 'gp', '<cmd>Git blame<cr>', { desc = '[g]it [p]raise toggle' })
 
 -- undotree
 vim.keymap.set('n', 'gu', '<cmd>UndotreeToggle<cr>', { desc = 'toggle undotree' })
 
 -- comfort
 vim.keymap.set('n', ';', ':', { desc = 'map ; to : for comfort' })
-vim.keymap.set('n', 'J', 'gT', { desc = 'previous tab' })
-vim.keymap.set('n', 'K', 'gt', { desc = 'next tab' })
+vim.keymap.set('n', '<C-j>', 'gT', { desc = 'previous tab' })
+vim.keymap.set('n', '<C-k>', 'gt', { desc = 'next tab' })
