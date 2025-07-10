@@ -65,5 +65,13 @@ export KUBECONFIG=$HOME/rke-apps-dev.yml
 export LOCAL_ENV=dev
 eval $(ssh-agent)
 
+command_not_found_handle () {
+    >&2 echo "-bash: $1: command not found"
+    if [[ "x$MY_OS" == "xvoid" ]]; then
+        >&2 echo "Install $1 with one of these packages: "
+        xlocate /chromium$ | cut -d ' ' -f 1 | >&2 uniq
+    fi
+}
+
 # site stuff
 source $HOME/conf/site.sh
