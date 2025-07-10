@@ -27,3 +27,5 @@ xset
 xbindkeys
 xwallpaper
 lf
+pkg-config
+harfbuzz-devel
