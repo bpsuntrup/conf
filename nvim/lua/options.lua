@@ -31,6 +31,12 @@ vim.o.expandtab = true
 -- Enable break indent
 vim.o.breakindent = true
 
+-- indentation:
+vim.o.autoindent = true
+vim.o.smartindent = false
+vim.o.cindent = false
+vim.o.indentexpr = ''
+
 -- Save undo history
 vim.o.undofile = true
 
