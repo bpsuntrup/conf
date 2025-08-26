@@ -30,6 +30,7 @@ alias sa=ssh-add
 export HISTCONTROL=ignoreboth
 export MYBIN=$HOME/conf/bin
 export PATH=$HOME/.plenv/bin:$HOME/.local/bin:/usr/lib/qt5/bin:/usr/local/pgsql/bin:$MYBIN:$PATH
+#export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH
 export EDITOR=vim
 export PAGER=less
 export OPENER=opener
@@ -58,6 +59,11 @@ export DIARY=$HOME/dox/diary
 # plenv
 eval "$(plenv init -)"
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - bash)"   # use - zsh if zsh
+
+
 set -o vi
 
 # work stuff
@@ -75,3 +81,5 @@ command_not_found_handle () {
 
 # site stuff
 source $HOME/conf/site.sh
+
+[ -f "/home/benjamin/.local/.ghcup/env" ] && . "/home/benjamin/.local/.ghcup/env" # ghcup-env

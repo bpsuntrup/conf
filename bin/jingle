@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# TODO: make this read music from a file and adjust the number of
+# Z's and the number of -c's read from head to produce different notes
+# of different lengths. Then use this command to produce small jingles
+# when running other commands.
+
+# Dad's part
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 10000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+
+sleep 0.5
+
+# Winifred's part
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZzzzzzzzzzzzzzzzzzzzzzzzzzzzZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZzzzZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZ| head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+
+sleep 0.5
+
+# Gresham's part
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZzzzzzzzzzzzzzzzzzZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ | head -c 5000 | padsp tee /dev/audio > /dev/null
+
+sleep 0.5
+
+# Ed's part
+yes zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes aaaanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanaannnnnaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | head -c 5000 | padsp tee /dev/audio > /dev/null
+yes aaaanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanaannnnnaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | head -c 5000 | padsp tee /dev/audio > /dev/null
