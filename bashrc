@@ -79,7 +79,8 @@ command_not_found_handle () {
     fi
 }
 
+
 # site stuff
 source $HOME/conf/site.sh
 
-[ -f "/home/benjamin/.local/.ghcup/env" ] && . "/home/benjamin/.local/.ghcup/env" # ghcup-env
+# [ -f "/home/benjamin/.local/.ghcup/env" ] && . "/home/benjamin/.local/.ghcup/env" # ghcup-env
