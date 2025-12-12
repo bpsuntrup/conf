@@ -544,6 +544,8 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         pyright = {},
+        -- note: must install ruby-lsp for this to work: `gem install ruby-lsp`
+        ruby_lsp = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
