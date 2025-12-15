@@ -78,6 +78,7 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'mbbill/undotree',
 
+  -- in visual mode comment linewise with gc and blockwise with gb
   {
     'numToStr/Comment.nvim',
     opts = {},
