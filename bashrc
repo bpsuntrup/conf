@@ -25,7 +25,9 @@ alias ls='ls --color=auto'
 alias tm='tmux attach'
 alias wget='wget --hsts-file ${XDG_STATE_HOME}/wget/.wget-hsts'
 alias sa=ssh-add
-
+alias ga="git add --all"
+alias gc="git commit -m "
+alias gs="git status"
 
 export HISTCONTROL=ignoreboth
 export MYBIN=$HOME/conf/bin
